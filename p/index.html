@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA_Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supriya's Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-circle-notch"></i> 
+                    <div class="logo-text">Welcome to my Portfolio</div>
+                </div> 
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                </nav>
+            </header>
+    
+   <div class="container">
+                <div class="hero-pic">
+                    <img src="profile.jpg" alt="Profile Picture">
+                </div>
+                <div class="hero-text">
+                    <h5>Hi, I'm <span class="typed"></span></h5>
+
+                    <h1>Supriya M</h1>
+                    <p><em>🧑‍💻 About Me</em></p>
+                    <p>🚀 I'm passionate about solving real-world problems with AI.</p>
+                    <p>🔬 Passionate about Deep Learning, Computer Vision & NLP.</p>
+                    <p>💻 Building smart web apps & AI-powered solutions.</p>
+                    <p>🎤 Exploring tech & attending conferences to stay ahead.</p>
+                    
+                   
+
+                   <div class="social">
+                        <a href="https://www.linkedin.com/in/supriya-m-8813b5264/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/supriyachola" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/supriyachola" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:supriyachola123@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                  
+    <section id="skills">
+<h2>Skills</h2>
+        <p><strong>★ programming Language :
+             </strong>Python, C, Java, SQL, HTML, CSS, JavaScript </p>
+        <p><strong>★ Tools & Technologies : 
+        </strong>GitHub ,MangoDB, MySQL, TensorFlow, PyTorch, WebSockets, Power BI</p>
+        <p><strong>★ Technical Learning : 
+        </strong>Machine Learning, Deep Learning, Data Analysis, Data Visualization, Natural Language Processing</p>
+        <p><strong>★ Soft Skills :
+             </strong>Problem Solving, Collaboration, Communication, Time Management, Adaptability</p>
+      
+    </section>
+    
+    <section id="projects">
+         <h2>My Projects</h2>
+        
+        </div>
+        <div class="projects-container">
+            <div class="project-card" data-category="ai">
+                <h3><a href="https://github.com/supriyachola/AI-POWERED-CONNECTIONS-FOR-MATCHING-PROFILES" target="_blank">AI-Powered Matching System</a></h3>
+                <p>This project is an AI-powered real-time video conferencing system that intelligently matches users based on shared interests.</p>
+                <span class="tech">Python, OpenCV, WebSockets,word2vec</span>
+            </div>
+            <div class="project-card" data-category="chatbot">
+                <h3><a href="https://github.com/supriyachola/CHATBOT_WITH_RULE-BASED_-RESPONSES_CODSOFT" target="_blank">Rule-Based Chatbot</a></h3>
+                <p>The chatbot responds to user inputs based on predefined rules and patterns.</p>
+                <span class="tech">Python, Tkinter</span>
+            </div>
+            <div class="project-card" data-category="ml">
+                <h3><a href="https://github.com/supriyachola/RECOMMENDATION_SYSTEM_CODSOFT" target="_blank">Recommendation System</a></h3>
+                <p> It allows users to input an item from one of three categories (Movies, Books, Products) and receive recommendations based on item descriptions using TF-IDF Vectorization and Cosine Similarity.</p>
+                <span class="tech">Python, Pandas, Scikit-Learn</span>
+            </div>
+            <div class="project-card" data-category="ai">
+                <h3><a href="https://github.com/supriyachola/FACE_DETECTION_AND_RECOGNITION_CODSOFT" target="_blank">Face Detection & Recognition</a></h3>
+                <p>The app allows users to upload images or videos, and it will detect faces in the uploaded media, displaying them with bounding boxes.</p>
+                <span class="tech">Python, OpenCV, Tkinter</span>
+            </div>
+            <div class="project-card" data-category="co2 calculas">
+                <h3><a href="https://github.com/supriyachola/Serpents" target="_blank">Serpents </a></h3>
+                <p>Calculating Carbon emission by daily base activities </p>
+                <span class="tech">HTML, CSS, JavaScript</span>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <script>
+       var togglebtn = document.querySelector('.togglebtn');
+        var navlink = document.querySelector('.navlinks');
+        var links = document.querySelectorAll('.navlinks li');
+
+        togglebtn.addEventListener('click', function() {
+            this.classList.toggle('click');
+            navlink.classList.toggle('open');
+        });
+        var typed = new Typed(".typed", {
+            strings: ["AI & ML Enthusiast", "Web Developer","Quantum AI Enthusiast"],
+            typeSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        });
+    </script>
+</body>
+</html>
