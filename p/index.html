@@ -1,119 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-  <meta http-equiv="X-UA_Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supriya's Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script defer src="index.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supriya M | AI/ML Engineer · Published Researcher · IISc KSCST Selectee</title>
+  <meta name="description" content="Final-year AI & ML engineer from Bengaluru with 2 research publications, IISc KSCST selection, and production AI systems across GenAI, NLP, Computer Vision, and Python backends." />
+  <meta name="keywords" content="Supriya M, AI ML Engineer Bengaluru, Generative AI Developer India, Python Backend Developer, Machine Learning Engineer fresher, FastAPI developer, NLP engineer, Computer Vision, AI research publication" />
+  <meta name="author" content="Supriya M" />
+  <meta property="og:title" content="Supriya M | AI/ML Engineer · Published Researcher" />
+  <meta property="og:description" content="Building production AI systems — 2 publications, IISc KSCST selectee, open to AI/ML roles." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="hero-header">
-        <div class="wrapper">
-            <header>
-                <div class="logo">
-                    <i class="fa-solid fa-circle-notch"></i> 
-                    <div class="logo-text">Welcome to my Portfolio</div>
-                </div> 
-                <nav>
-                    <div class="togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    
-                </nav>
-            </header>
-    
-   <div class="container">
-                <div class="hero-pic">
-                    <img src="profile.jpg" alt="Profile Picture">
-                </div>
-                <div class="hero-text">
-                    <h5>Hi, I'm <span class="typed"></span></h5>
 
-                    <h1>Supriya M</h1>
-                    <p><em>🧑‍💻 About Me</em></p>
-                    <p>🚀 I'm passionate about solving real-world problems with AI.</p>
-                    <p>🔬 Passionate about Deep Learning, Computer Vision & NLP.</p>
-                    <p>💻 Building smart web apps & AI-powered solutions.</p>
-                    <p>🎤 Exploring tech & attending conferences to stay ahead.</p>
-                    
-                   
+<div id="progress-bar" role="presentation" aria-hidden="true"></div>
 
-                   <div class="social">
-                        <a href="https://www.linkedin.com/in/supriya-m-8813b5264/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/supriyachola" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://instagram.com/supriyachola" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="mailto:supriyachola123@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                  
-    <section id="skills">
-<h2>Skills</h2>
-        <p><strong>★ programming Language :
-             </strong>Python, C, Java, SQL, HTML, CSS, JavaScript </p>
-        <p><strong>★ Tools & Technologies : 
-        </strong>GitHub ,MangoDB, MySQL, TensorFlow, PyTorch, WebSockets, Power BI</p>
-        <p><strong>★ Technical Learning : 
-        </strong>Machine Learning, Deep Learning, Data Analysis, Data Visualization, Natural Language Processing</p>
-        <p><strong>★ Soft Skills :
-             </strong>Problem Solving, Collaboration, Communication, Time Management, Adaptability</p>
-      
-    </section>
-    
-    <section id="projects">
-         <h2>My Projects</h2>
-        
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="#hero" class="nav__logo">Supriya<em>.</em>M</a>
+  <ul class="nav__links" id="nav-links" role="list">
+    <li><a href="#projects"     class="nav__link">Projects</a></li>
+    <li><a href="#skills"       class="nav__link">Skills</a></li>
+    <li><a href="#experience"   class="nav__link">Experience</a></li>
+    <li><a href="#publications" class="nav__link">Research</a></li>
+    <li><a href="#about"        class="nav__link">About</a></li>
+    <li><a href="#contact" class="nav__cta">Hire Me</a></li>
+  </ul>
+  <button class="nav__hamburger" id="hamburger" aria-expanded="false" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="hero" aria-label="Introduction">
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="hero__status" role="status" aria-live="polite">
+    <span class="hero__dot" aria-hidden="true"></span>
+    <span id="tw-text"></span>
+  </div>
+
+  <h1 class="hero__name">
+    <span class="hero__name-accent">Supriya M</span>
+  </h1>
+
+  <div class="hero__roles" role="list">
+    <span class="hero__role-tag" role="listitem">AI/ML Engineer</span>
+    <span class="hero__role-sep" aria-hidden="true">·</span>
+    <span class="hero__role-tag" role="listitem">GenAI Developer</span>
+    <span class="hero__role-sep" aria-hidden="true">·</span>
+    <span class="hero__role-tag" role="listitem">Python Backend</span>
+    <span class="hero__role-sep" aria-hidden="true">·</span>
+    <span class="hero__role-tag" role="listitem">Published Researcher</span>
+  </div>
+
+  <p class="hero__tagline">
+    I build <strong>AI systems that work in the real world</strong> —
+    from multimodal assistants to safety platforms trained on
+    <strong>a million records</strong>.<br />
+    <em>I don't just study AI. I build with it.</em>
+  </p>
+
+  <div class="hero__ctas">
+    <a href="#projects" class="btn btn--primary">View My Work</a>
+    <a href="SUPRIYA_M_Resume_.pdf" download class="btn btn--ghost">Download Resume</a>
+  </div>
+
+  <div class="hero__meta">
+    <span class="hero__meta-item">&#128205; <span>Bengaluru, India</span></span>
+    <span class="hero__meta-item">&#127891; <span>B.E. AI &amp; ML · CGPA 9.05</span></span>
+    <span class="hero__meta-item">&#128197; <span>Graduating July 2026</span></span>
+    <span class="hero__meta-item">&#128196; <span>2 Research Publications</span></span>
+    <span class="hero__meta-item">&#9989; <span>Open to Opportunities</span></span>
+  </div>
+</section>
+
+<!-- CREDIBILITY BAR -->
+<div class="credbar" aria-label="Key credentials">
+  <div class="credbar__inner">
+    <div class="credbar__item reveal">
+      <div class="credbar__icon">&#128196;</div>
+      <div>
+        <div class="credbar__label">2 Research Publications</div>
+        <div class="credbar__sub">NCIIT 2025 &amp; IJARESM 2025</div>
+      </div>
+    </div>
+    <div class="credbar__item reveal reveal-d1">
+      <div class="credbar__icon">&#127963;&#65039;</div>
+      <div>
+        <div class="credbar__label">KSCST Selected</div>
+        <div class="credbar__sub">49th SPP · IISc Bangalore</div>
+      </div>
+    </div>
+    <div class="credbar__item reveal reveal-d2">
+      <div class="credbar__icon">&#129504;</div>
+      <div>
+        <div class="credbar__label">AI/ML Intern</div>
+        <div class="credbar__sub">IIMSTC · 5 months</div>
+      </div>
+    </div>
+    <div class="credbar__item reveal reveal-d3">
+      <div class="credbar__icon">&#128188;</div>
+      <div>
+        <div class="credbar__label">ML Intern</div>
+        <div class="credbar__sub">CodSoft</div>
+      </div>
+    </div>
+    <div class="credbar__item reveal reveal-d4">
+      <div class="credbar__icon">&#11088;</div>
+      <div>
+        <div class="credbar__label">CGPA 9.05</div>
+        <div class="credbar__sub">AMC Engineering College</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects" class="section" aria-labelledby="projects-heading">
+  <div class="container">
+    <p class="section__eyebrow reveal">Featured Work</p>
+    <h2 class="section__title reveal" id="projects-heading">Projects that ship.</h2>
+    <p class="section__sub reveal">Production-grade AI systems — not just notebooks. Every project is end-to-end, deployed, and solves a real problem.</p>
+
+    <!-- TIER 1 -->
+    <div class="projects__hero-grid">
+
+      <!-- VoxMate -->
+      <article class="card card--hero card--featured-bg reveal" aria-label="VoxMate project">
+        <div class="card__badges">
+          <span class="badge badge--violet">&#9733; Hero Project</span>
+          <span class="badge badge--cyan">&#128196; NCIIT 2025</span>
+          <span class="badge badge--green">&#127963;&#65039; IISc KSCST</span>
         </div>
-        <div class="projects-container">
-            <div class="project-card" data-category="ai">
-                <h3><a href="https://github.com/supriyachola/AI-POWERED-CONNECTIONS-FOR-MATCHING-PROFILES" target="_blank">AI-Powered Matching System</a></h3>
-                <p>This project is an AI-powered real-time video conferencing system that intelligently matches users based on shared interests.</p>
-                <span class="tech">Python, OpenCV, WebSockets,word2vec</span>
-            </div>
-            <div class="project-card" data-category="chatbot">
-                <h3><a href="https://github.com/supriyachola/CHATBOT_WITH_RULE-BASED_-RESPONSES_CODSOFT" target="_blank">Rule-Based Chatbot</a></h3>
-                <p>The chatbot responds to user inputs based on predefined rules and patterns.</p>
-                <span class="tech">Python, Tkinter</span>
-            </div>
-            <div class="project-card" data-category="ml">
-                <h3><a href="https://github.com/supriyachola/RECOMMENDATION_SYSTEM_CODSOFT" target="_blank">Recommendation System</a></h3>
-                <p> It allows users to input an item from one of three categories (Movies, Books, Products) and receive recommendations based on item descriptions using TF-IDF Vectorization and Cosine Similarity.</p>
-                <span class="tech">Python, Pandas, Scikit-Learn</span>
-            </div>
-            <div class="project-card" data-category="ai">
-                <h3><a href="https://github.com/supriyachola/FACE_DETECTION_AND_RECOGNITION_CODSOFT" target="_blank">Face Detection & Recognition</a></h3>
-                <p>The app allows users to upload images or videos, and it will detect faces in the uploaded media, displaying them with bounding boxes.</p>
-                <span class="tech">Python, OpenCV, Tkinter</span>
-            </div>
-            <div class="project-card" data-category="co2 calculas">
-                <h3><a href="https://github.com/supriyachola/Serpents" target="_blank">Serpents </a></h3>
-                <p>Calculating Carbon emission by daily base activities </p>
-                <span class="tech">HTML, CSS, JavaScript</span>
-            </div>
+        <div class="card__header">
+          <div class="card__icon">&#127897;&#65039;</div>
+          <div>
+            <h3 class="card__title">VoxMate</h3>
+            <p class="card__pitch">Multimodal Voice + Vision AI Assistant</p>
+          </div>
         </div>
-    </section>
-    
+        <p class="card__desc">
+          A published multimodal AI assistant combining face biometric authentication,
+          real-time WebRTC voice streaming, and a lightweight LLM for intent understanding.
+          Handles email, web, IoT, and system automation through a unified interface.
+          <strong>Selected for the 49th KSCST Student Project Programme at IISc Bangalore — passed midterm evaluation.</strong>
+        </p>
+        <div class="card__stats">
+          <div><div class="stat__val">Published</div><div class="stat__lbl">NCIIT 2025</div></div>
+          <div><div class="stat__val">KSCST</div><div class="stat__lbl">IISc Selected</div></div>
+          <div><div class="stat__val">6+</div><div class="stat__lbl">Auto modules</div></div>
+          <div><div class="stat__val">Real-time</div><div class="stat__lbl">WebRTC stream</div></div>
+        </div>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">OpenCV</span><span class="chip">WebRTC</span>
+          <span class="chip">LLM</span><span class="chip">Speech Recognition</span>
+          <span class="chip">FastAPI</span><span class="chip">Face Auth</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/supriyachola/Voxmate-An-Intelligent-voice-and-vision-assistant"
+             target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">&#11041; GitHub</a>
+          <a href="#publications" class="btn btn--ghost btn--sm">&#128196; Research Paper</a>
+        </div>
+      </article>
 
-    
-    <script>
-       var togglebtn = document.querySelector('.togglebtn');
-        var navlink = document.querySelector('.navlinks');
-        var links = document.querySelectorAll('.navlinks li');
+      <!-- NYVRA -->
+      <article class="card card--hero reveal reveal-d1" aria-label="NYVRA project">
+        <div class="card__badges">
+          <span class="badge badge--violet">&#9733; Featured</span>
+          <span class="badge badge--green">&#128737;&#65039; Social Impact · SDG 5</span>
+        </div>
+        <div class="card__header">
+          <div class="card__icon">&#128737;&#65039;</div>
+          <div>
+            <h3 class="card__title">NYVRA</h3>
+            <p class="card__pitch">AI-Powered Women's Safety Platform</p>
+          </div>
+        </div>
+        <p class="card__desc">
+          End-to-end safety platform with ML risk prediction trained on <strong>1M+ records</strong>,
+          real-time safe route optimization, SOS features, and a Flutter mobile app
+          backed by a production FastAPI + Supabase architecture. Addresses UN SDG 5 &amp; SDG 11.
+        </p>
+        <div class="card__stats">
+          <div><div class="stat__val">1M+</div><div class="stat__lbl">Training records</div></div>
+          <div><div class="stat__val">XGBoost</div><div class="stat__lbl">+ Random Forest</div></div>
+          <div><div class="stat__val">Flutter</div><div class="stat__lbl">Mobile app</div></div>
+          <div><div class="stat__val">SDG 5</div><div class="stat__lbl">UN alignment</div></div>
+        </div>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">FastAPI</span>
+          <span class="chip">XGBoost</span><span class="chip">Random Forest</span>
+          <span class="chip">Flutter</span><span class="chip">Supabase</span><span class="chip">REST API</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/supriyachola/nyvra-backend"
+             target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">&#11041; Backend</a>
+          <a href="https://github.com/supriyachola/Nyvra"
+             target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">&#11041; Mobile App</a>
+          <a href="#" class="btn btn--cyan btn--sm" title="Upload APK to GitHub Releases then update this link">
+            &#128241; APK (Coming Soon)
+          </a>
+        </div>
+      </article>
 
-        togglebtn.addEventListener('click', function() {
-            this.classList.toggle('click');
-            navlink.classList.toggle('open');
-        });
-        var typed = new Typed(".typed", {
-            strings: ["AI & ML Enthusiast", "Web Developer","Quantum AI Enthusiast"],
-            typeSpeed: 70,
-            backSpeed: 55,
-            loop: true
-        });
-    </script>
+    </div>
+
+    <!-- Carbon Calculus — full width -->
+    <div class="projects__wide">
+      <article class="card reveal" aria-label="Carbon Calculus project">
+        <div class="card__badges">
+          <span class="badge badge--green">&#127760; Live Demo</span>
+          <span class="badge badge--amber">&#9889; Full-Stack AI</span>
+        </div>
+        <div class="card__header">
+          <div class="card__icon card__icon--green">&#127807;</div>
+          <div>
+            <h3 class="card__title">Carbon Calculus</h3>
+            <p class="card__pitch card__pitch--green">Personal Carbon Footprint Tracker · Deployed</p>
+          </div>
+        </div>
+        <p class="card__desc">
+          A deployed full-stack web app for carbon footprint analysis. Features a multi-category CO&#8322; calculator,
+          <strong>DistilGPT-2 powered eco-tips</strong> (local inference — no API keys),
+          Chart.js analytics dashboard, leaderboard, PDF export, and full auth system.
+          Demonstrates end-to-end ownership: frontend, FastAPI backend, local LLM, database, Railway + Netlify.
+        </p>
+        <div class="chips">
+          <span class="chip">FastAPI</span><span class="chip">SQLite3</span>
+          <span class="chip">DistilGPT-2</span><span class="chip">Transformers</span>
+          <span class="chip">Chart.js</span><span class="chip">jsPDF</span>
+          <span class="chip">Netlify</span><span class="chip">Railway</span>
+        </div>
+        <div class="card__links">
+          <a href="https://serpents-carbonaware.netlify.app"
+             target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm">&#127760; Live Demo</a>
+          <a href="https://github.com/supriyachola/serpents-Carbon_foot_prints"
+             target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">&#11041; GitHub</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Additional projects -->
+    <p class="section__eyebrow reveal" style="margin-top:2rem;margin-bottom:0.5rem;">More Projects</p>
+    <div class="projects__grid">
+
+      <article class="card card--sm reveal" aria-label="AI Profile Matching project">
+        <div class="card__header">
+          <div class="card__icon card__icon--cyan">&#129309;</div>
+          <div>
+            <h3 class="card__title">AI Profile Matching</h3>
+            <p class="card__pitch card__pitch--cyan">Interest-Based Video Conferencing</p>
+          </div>
+        </div>
+        <p class="card__desc" style="font-size:0.82rem;">
+          Word2Vec-powered user matching with real-time video, audio &amp; text conferencing.
+          <strong>Published — IJARESM Vol.13, Issue 7, July 2025.</strong>
+        </p>
+        <div class="chips">
+          <span class="chip">Flask</span><span class="chip">Word2Vec</span>
+          <span class="chip">OpenCV</span><span class="chip">WebSockets</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/supriyachola/AI-POWERED-CONNECTIONS-FOR-MATCHING-PROFILES"
+             target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">&#11041; GitHub</a>
+          <a href="#publications" class="btn btn--cyan btn--sm">&#128196; Publication</a>
+        </div>
+      </article>
+
+      <article class="card card--sm reveal reveal-d1" aria-label="Water Potability project">
+        <div class="card__header">
+          <div class="card__icon card__icon--green">&#128167;</div>
+          <div>
+            <h3 class="card__title">Water Potability Classifier</h3>
+            <p class="card__pitch card__pitch--green">ML for Public Safety · SDG 6</p>
+          </div>
+        </div>
+        <p class="card__desc" style="font-size:0.82rem;">
+          ML classification of safe vs unsafe drinking water using chemical sensor data.
+          Supports automated water quality monitoring. (IIMSTC Internship)
+        </p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Scikit-learn</span>
+          <span class="chip">Pandas</span><span class="chip">Classification</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/Madhura-r/IIMSTC-Water-Potability-Classification-"
+             target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">&#11041; GitHub</a>
+        </div>
+      </article>
+
+      <article class="card card--sm reveal reveal-d2" aria-label="Gender Pay Gap project">
+        <div class="card__header">
+          <div class="card__icon card__icon--amber">&#9878;&#65039;</div>
+          <div>
+            <h3 class="card__title">Gender Pay Gap Model</h3>
+            <p class="card__pitch card__pitch--amber">Fairness Analytics · SDG 5</p>
+          </div>
+        </div>
+        <p class="card__desc" style="font-size:0.82rem;">
+          Comparative regression of workplace gender pay gaps using dummy variables.
+          Visual insights across gender, education, and experience. (IIMSTC Internship)
+        </p>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Statsmodels</span>
+          <span class="chip">Regression</span><span class="chip">Seaborn</span>
+        </div>
+        <div class="card__links">
+          <a href="https://github.com/Madhura-r/IIMSTC-Workplace-Gender-Pay-Gap-Model"
+             target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--sm">&#11041; GitHub</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section section--alt" aria-labelledby="skills-heading">
+  <div class="container">
+    <p class="section__eyebrow reveal">Technical Stack</p>
+    <h2 class="section__title reveal" id="skills-heading">What I build with.</h2>
+    <p class="section__sub reveal">Full-spectrum AI/ML engineering — model training to production deployment.</p>
+
+    <div class="skills__grid">
+      <div class="skill-block reveal">
+        <div class="skill-block__head">&#129504; AI &amp; Machine Learning</div>
+        <div class="skill-block__pills">
+          <span class="pill">TensorFlow</span><span class="pill">PyTorch</span>
+          <span class="pill">Scikit-learn</span><span class="pill">XGBoost</span>
+          <span class="pill">Random Forest</span><span class="pill">OpenCV</span>
+          <span class="pill">Word2Vec</span><span class="pill">TF-IDF</span>
+          <span class="pill">Cosine Similarity</span><span class="pill">Classification</span>
+        </div>
+      </div>
+      <div class="skill-block reveal reveal-d1">
+        <div class="skill-block__head">&#10024; Generative AI &amp; LLMs</div>
+        <div class="skill-block__pills">
+          <span class="pill">LLM Integration</span><span class="pill">DistilGPT-2</span>
+          <span class="pill">Transformers</span><span class="pill">HuggingFace</span>
+          <span class="pill">Prompt Engineering</span><span class="pill">NLP</span>
+          <span class="pill">RAG</span><span class="pill">Multimodal AI</span>
+        </div>
+      </div>
+      <div class="skill-block reveal reveal-d2">
+        <div class="skill-block__head">&#9881;&#65039; Backend &amp; APIs</div>
+        <div class="skill-block__pills">
+          <span class="pill">Python</span><span class="pill">FastAPI</span>
+          <span class="pill">Flask</span><span class="pill">REST APIs</span>
+          <span class="pill">WebSockets</span><span class="pill">WebRTC</span>
+          <span class="pill">Supabase</span><span class="pill">SQLite</span>
+          <span class="pill">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-block reveal reveal-d3">
+        <div class="skill-block__head">&#128296; Tools &amp; Platforms</div>
+        <div class="skill-block__pills">
+          <span class="pill">Git &amp; GitHub</span><span class="pill">Flutter</span>
+          <span class="pill">Netlify</span><span class="pill">Railway</span>
+          <span class="pill">Power BI</span><span class="pill">Jupyter</span>
+          <span class="pill">VS Code</span><span class="pill">Postman</span>
+        </div>
+      </div>
+      <div class="skill-block skill-block--wide reveal">
+        <div class="skill-block__head">&#128187; Languages</div>
+        <div class="skill-block__pills">
+          <span class="pill">Python</span><span class="pill">SQL</span>
+          <span class="pill">JavaScript</span><span class="pill">HTML &amp; CSS</span>
+          <span class="pill">Dart (Flutter)</span><span class="pill">C</span>
+          <span class="pill">Java</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section" aria-labelledby="exp-heading">
+  <div class="container">
+    <p class="section__eyebrow reveal">Career</p>
+    <h2 class="section__title reveal" id="exp-heading">Experience.</h2>
+    <p class="section__sub reveal">Where I've applied what I build.</p>
+
+    <div class="exp__timeline" role="list">
+      <div class="exp__line" aria-hidden="true"></div>
+
+      <div class="exp__item reveal" role="listitem">
+        <div class="exp__dot" aria-hidden="true"></div>
+        <div class="exp__meta">Jan 2026 – May 2026 · 5 months</div>
+        <div class="exp__role">Engineer Intern — AI/ML &amp; Generative AI</div>
+        <div class="exp__org">International Institute of Medical Science and Technology Council (IIMSTC)</div>
+        <ul class="exp__list">
+          <li>Built Water Potability Classification system using ML for automated public health water safety monitoring</li>
+          <li>Developed Workplace Gender Pay Gap Analysis model (regression + dummy variables, aligned with UN SDG 5)</li>
+          <li>Applied full ML pipelines: data cleaning, outlier handling, feature engineering, model training, evaluation, export</li>
+          <li>Collaborated on deploying AI solutions in healthcare and social research contexts</li>
+        </ul>
+      </div>
+
+      <div class="exp__item reveal reveal-d1" role="listitem">
+        <div class="exp__dot" aria-hidden="true"></div>
+        <div class="exp__meta">Mar 2025 – Apr 2025 · 2 months</div>
+        <div class="exp__role">Machine Learning Intern</div>
+        <div class="exp__org">CodSoft</div>
+        <ul class="exp__list">
+          <li>Built and deployed 3 ML apps in 2 months: NLP chatbot, content-based recommendation engine, live face recognition</li>
+          <li>Built Recommendation System (Movies, Books, Products) using TF-IDF + cosine similarity with Tkinter GUI</li>
+          <li>Implemented Face Detection &amp; Recognition with OpenCV, live webcam integration, real-time GUI</li>
+          <li>Gained hands-on experience with Python, Git, model training, UI development, and documentation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="section section--alt" aria-labelledby="pub-heading">
+  <div class="container">
+    <p class="section__eyebrow reveal">Research</p>
+    <h2 class="section__title reveal" id="pub-heading">Published work.</h2>
+    <p class="section__sub reveal">Two peer-reviewed publications as an undergrad. Most IIT students don't have this.</p>
+
+    <div class="pub__grid">
+
+      <article class="pub__card reveal" aria-label="VoxMate publication">
+        <div class="pub__num" aria-hidden="true">01</div>
+        <div>
+          <h3 class="pub__title">Voxmate: An Intelligent Voice &amp; Vision Based Smart Assistant</h3>
+          <div class="pub__venue">NCIIT 2025 — National Conference on Innovations in Information Technology</div>
+          <p class="pub__desc">
+            Published research on a multimodal AI assistant combining real-time voice interaction,
+            face biometric authentication, WebRTC streaming, and LLM-powered intent understanding
+            for modular task automation.
+            <strong style="color:var(--cyan);">Also selected for the 49th KSCST Student Project Programme, IISc Bangalore — passed midterm evaluation.</strong>
+          </p>
+          <div class="pub__tags">
+            <span class="chip">Multimodal AI</span><span class="chip">Voice + Vision</span>
+            <span class="chip">LLM</span><span class="chip">WebRTC</span>
+            <span class="chip">Face Auth</span><span class="chip">Real-time Streaming</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub__card reveal reveal-d1" aria-label="AI Connections publication">
+        <div class="pub__num" aria-hidden="true">02</div>
+        <div>
+          <h3 class="pub__title">AI-Powered Connections for Matching Profiles</h3>
+          <div class="pub__venue">IJARESM · Vol. 13, Issue 7, July 2025</div>
+          <p class="pub__desc">
+            Research on an AI-driven real-time video conferencing system that intelligently matches users
+            based on shared interests using Word2Vec and scikit-learn. Covers ML architecture,
+            WebSocket communication, adaptive learning, and scalability.
+          </p>
+          <div class="pub__tags">
+            <span class="chip">Word2Vec</span><span class="chip">Interest Matching</span>
+            <span class="chip">Real-time Conferencing</span><span class="chip">WebSockets</span>
+            <span class="chip">OpenCV</span><span class="chip">Flask</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="card card--sm reveal" style="margin-top:1.5rem;flex-direction:row;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.85rem;font-weight:600;color:var(--text-1);margin-bottom:0.15rem;">&#129303; Also on Hugging Face</div>
+        <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-2);">Models &amp; demos · huggingface.co/supriyachola</div>
+      </div>
+      <a href="https://huggingface.co/supriyachola" target="_blank" rel="noopener noreferrer"
+         class="btn btn--ghost btn--sm">View Profile &#8594;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section" aria-labelledby="about-heading">
+  <div class="container">
+    <p class="section__eyebrow reveal">About Me</p>
+    <h2 class="section__title reveal" id="about-heading">The person behind the models.</h2>
+
+    <div class="about__grid">
+      <aside class="about__portrait reveal">
+        <div class="about__frame">
+          <img src="assets/profile.jpg" alt="Supriya M"
+               onerror="this.style.display='none';document.getElementById('initials').style.display='flex';" />
+          <div id="initials" class="about__initials" style="display:none;" aria-hidden="true">SM</div>
+        </div>
+        <div class="about__stat-grid">
+          <div class="about__stat">
+            <span class="about__stat-val">9.05</span>
+            <span class="about__stat-lbl">CGPA</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-val">6+</span>
+            <span class="about__stat-lbl">AI Projects</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-val">2</span>
+            <span class="about__stat-lbl">Publications</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-val">2</span>
+            <span class="about__stat-lbl">Internships</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="about__content reveal reveal-d1">
+        <h3>Who I am</h3>
+        <p>
+          I'm <strong>Supriya M</strong>, a final-year B.E. student in Artificial Intelligence and
+          Machine Learning at AMC Engineering College, Bengaluru (graduating July 2026, CGPA 9.05).
+        </p>
+        <p>
+          I specialize in building <strong>end-to-end AI systems</strong> — from training ML models
+          on large-scale datasets to deploying production APIs and integrating generative AI into
+          real applications across ML, GenAI, Computer Vision, NLP, and Python backend development.
+        </p>
+
+        <h3>What makes me different</h3>
+        <p>
+          I've built systems that handle <strong>1M+ records</strong>, published two research papers
+          as an undergrad, and had my project selected for evaluation at <strong>IISc Bangalore</strong> —
+          from a Tier-2 college, through pure initiative and output quality.
+        </p>
+        <p>
+          I approach AI engineering the way it should be: obsessed with the real problem,
+          not just the model. Every system I build is designed to work in production, not just in a notebook.
+        </p>
+
+        <h3>Currently seeking</h3>
+        <div class="about__seeking">
+          <span class="seeking-tag">AI/ML Engineer</span>
+          <span class="seeking-tag">GenAI Developer</span>
+          <span class="seeking-tag">Data Scientist</span>
+          <span class="seeking-tag">ML Engineer</span>
+          <span class="seeking-tag">Python Backend Developer</span>
+          <span class="seeking-tag">AI Research Intern</span>
+        </div>
+
+        <div class="about__social">
+          <a href="https://github.com/supriyachola" target="_blank" rel="noopener noreferrer" class="social-btn">&#11041; GitHub</a>
+          <a href="https://www.linkedin.com/in/supriyachola/" target="_blank" rel="noopener noreferrer" class="social-btn">in LinkedIn</a>
+          <a href="https://huggingface.co/supriyachola" target="_blank" rel="noopener noreferrer" class="social-btn">&#129303; HuggingFace</a>
+          <a href="https://leetcode.com/u/supriyachola/" target="_blank" rel="noopener noreferrer" class="social-btn">&#9889; LeetCode</a>
+          <a href="https://www.hackerrank.com/profile/supriyachola" target="_blank" rel="noopener noreferrer" class="social-btn">&#9733; HackerRank</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section--alt" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact__grid">
+
+      <div class="reveal">
+        <h2 class="contact__heading" id="contact-heading">
+          Let's build<br /><em>something.</em>
+        </h2>
+        <p class="contact__sub">
+          Actively looking for AI/ML, Data Science, GenAI, and Python Backend roles —
+          full-time or internship. If you're working on something interesting, I'd love to hear about it.
+        </p>
+
+        <div class="contact__info">
+          <div class="contact__row">
+            <div class="contact__row-icon">&#128231;</div>
+            <a href="mailto:supriyachola123@gmail.com">supriyachola123@gmail.com</a>
+          </div>
+          <div class="contact__row">
+            <div class="contact__row-icon">in</div>
+            <a href="https://www.linkedin.com/in/supriyachola/" target="_blank" rel="noopener noreferrer">linkedin.com/in/supriyachola</a>
+          </div>
+          <div class="contact__row">
+            <div class="contact__row-icon">&#11041;</div>
+            <a href="https://github.com/supriyachola" target="_blank" rel="noopener noreferrer">github.com/supriyachola</a>
+          </div>
+          <div class="contact__row">
+            <div class="contact__row-icon">&#128222;</div>
+            <a href="tel:+918618873280">+91 8618873280</a>
+          </div>
+        </div>
+
+        <a href="SUPRIYA_M_Resume_.pdf" download class="btn btn--primary">&#11015;&#65039; Download Resume</a>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <form class="form" aria-label="Contact form" onsubmit="return false;">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="cf-name">Your Name</label>
+              <input type="text" id="cf-name" class="form__input" placeholder="Jane Smith" autocomplete="name" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="cf-email">Email</label>
+              <input type="email" id="cf-email" class="form__input" placeholder="jane@company.com" autocomplete="email" />
+            </div>
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="cf-company">Company / Role</label>
+            <input type="text" id="cf-company" class="form__input" placeholder="Google · AI Engineer Role" />
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="cf-msg">Message</label>
+            <textarea id="cf-msg" class="form__textarea" placeholder="Tell me about the opportunity..."></textarea>
+          </div>
+          <button type="button" class="form__submit" id="form-submit">Send Message &#8594;</button>
+          <p class="form__note" id="form-status" role="status" aria-live="polite">Replies within 24 hours.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <p>
+    Designed &amp; built by
+    <a href="https://github.com/supriyachola" target="_blank" rel="noopener noreferrer">Supriya M</a>
+    &nbsp;&#183;&nbsp; Bengaluru, India &nbsp;&#183;&nbsp;
+    <a href="mailto:supriyachola123@gmail.com">supriyachola123@gmail.com</a>
+    &nbsp;&#183;&nbsp; <span id="footer-year"></span>
+  </p>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
