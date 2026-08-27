@@ -1,7 +1,5 @@
 {
   "functions": {
-    "api/resume-download.js": {
-      
-    }
+    "api/resume-download.js": {}
   }
 }
