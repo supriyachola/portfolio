@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/resume-download.js": {
-      "runtime": "nodejs22.x"
+      
     }
   }
 }
