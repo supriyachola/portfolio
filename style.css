@@ -43,7 +43,7 @@ body{
 .loader.done{opacity:0;visibility:hidden}
 .loader__inner{width:min(420px,72vw);text-align:center}
 .loader__glyph{
-  font-family:var(--serif);font-size:clamp(2rem,6vw,3.5rem);
+  font-family:var(--serif);font-size:clamp(3rem,8vw,4.5rem);
   letter-spacing:.22em;color:var(--bone);
   text-shadow:0 0 40px rgba(255,43,43,.35);
   animation:pulseGlyph 2.4s ease-in-out infinite;
