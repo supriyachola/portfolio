@@ -28,14 +28,20 @@
     .portfolio-card p{font-family:var(--serif);font-size:.8rem;line-height:2;color:rgba(232,228,220,.54);margin-top:1.2rem}
     .portfolio-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.4rem}
     .portfolio-tags span{font-family:var(--mono);font-size:.48rem;letter-spacing:.12em;color:var(--smoke);border:1px solid rgba(232,228,220,.1);padding:.4rem .55rem}
-    .portfolio-link{display:inline-block;margin-top:1.5rem;font-family:var(--mono);font-size:.52rem;letter-spacing:.24em;border-bottom:1px solid rgba(255,43,43,.55);padding-bottom:.3rem}
+    .portfolio-link{display:inline-block;margin-top:1.5rem;font-family:var(--mono);font-size:.52rem;letter-spacing:.24em;color:var(--smoke);text-decoration:none;border-bottom:1px solid rgba(255,43,43,.55);padding-bottom:.3rem;transition:color .25s ease,transform .25s ease}.portfolio-link:hover{color:var(--blood-hot);transform:translateY(-1px)}
     .portfolio-link:hover{color:var(--blood-hot)}
     .statline{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:1.4rem}
     .statline strong{display:block;font-family:var(--display);font-size:1.15rem;color:var(--bone)}
     .statline span{font-family:var(--mono);font-size:.48rem;letter-spacing:.14em;color:var(--smoke)}
-    .profile-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:7vw;margin-top:4rem}
-    .profile-big{font-family:var(--serif);font-size:clamp(2.8rem,6vw,6rem);line-height:.98}
+    .profile-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:7vw;margin-top:4rem;align-items:start}
+    .profile-visual{position:sticky;top:8rem}
+    .profile-photo{width:min(100%,340px);aspect-ratio:4/5;overflow:hidden;border:1px solid rgba(232,228,220,.12);position:relative;background:linear-gradient(145deg,rgba(192,18,31,.08),rgba(255,255,255,.015));box-shadow:0 25px 80px rgba(0,0,0,.35)}
+    .profile-photo::before{content:'';position:absolute;inset:10px;border:1px solid rgba(255,43,43,.2);pointer-events:none;z-index:2}
+    .profile-photo img{width:100%;height:100%;display:block;object-fit:cover;filter:grayscale(.12) contrast(1.06)}
+    .profile-photo::after{content:'SUPRIYA M · AI / ML';position:absolute;left:1.2rem;bottom:1rem;font-family:var(--mono);font-size:.45rem;letter-spacing:.25em;color:rgba(232,228,220,.7);z-index:3;text-shadow:0 2px 12px #000}
+    .profile-big{font-family:var(--serif);font-size:clamp(2.8rem,6vw,6rem);line-height:.98;margin-top:1.3rem}
     .profile-big span{color:var(--blood-hot)}
+    .profile-photo-fallback{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:2rem;font-family:var(--mono);font-size:.48rem;letter-spacing:.25em;color:rgba(232,228,220,.32);background:radial-gradient(circle at 50% 35%,rgba(192,18,31,.16),transparent 55%)}
     .profile-copy{color:rgba(232,228,220,.58);font-family:var(--serif);font-size:.9rem;line-height:2;margin-bottom:1.3rem}
     .profile-meta{border-left:1px solid var(--blood-hot);padding:1rem 1.2rem;margin-top:2rem;background:rgba(192,18,31,.035)}
     .profile-meta small{font-family:var(--mono);font-size:.48rem;letter-spacing:.24em;color:var(--blood-hot)}
@@ -53,9 +59,20 @@
     .research-box:after{content:'01';position:absolute;right:-1rem;bottom:-3rem;font-family:var(--display);font-size:14rem;color:rgba(255,43,43,.035)}
     .research-box h3{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3.4rem);max-width:780px;margin:1rem 0}
     .research-box p{font-family:var(--serif);font-size:.8rem;line-height:2;color:rgba(232,228,220,.54);max-width:800px}
-    .contact-section{text-align:center;min-height:75vh;display:grid;place-items:center}
-    .contact-email{display:inline-block;font-family:var(--serif);font-size:clamp(1.2rem,3vw,2rem);margin-top:2rem;border-bottom:1px solid var(--blood-hot);padding-bottom:.5rem}
-    .contact-email:hover{color:var(--blood-hot)}
+    .contact-section{min-height:78vh;display:grid;place-items:center}
+    .contact-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:7vw;align-items:end;margin-top:3rem}
+    .contact-copy{font-family:var(--serif);font-size:clamp(1rem,1.7vw,1.25rem);line-height:1.9;color:rgba(232,228,220,.62);max-width:650px}
+    .contact-card{border:1px solid rgba(232,228,220,.1);background:linear-gradient(145deg,rgba(192,18,31,.055),rgba(255,255,255,.012));padding:1.5rem 1.6rem;display:grid;gap:1rem}
+    .contact-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem 0;border-bottom:1px solid rgba(232,228,220,.08)}
+    .contact-row:last-child{border-bottom:0}
+    .contact-label{font-family:var(--mono);font-size:.48rem;letter-spacing:.24em;color:var(--blood-hot)}
+    .contact-value{font-family:var(--serif);font-size:.95rem;color:var(--bone);text-decoration:none;text-align:right}
+    .contact-value:hover{color:var(--blood-hot)}
+    .contact-email{font-size:inherit;margin:0;border:0;padding:0}
+    .contact-note{font-family:var(--mono);font-size:.46rem;letter-spacing:.16em;color:var(--smoke);margin-top:1.2rem}
+    .contact-socials{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+    .contact-socials a{font-family:var(--mono);font-size:.48rem;letter-spacing:.2em;color:var(--smoke);text-decoration:none;border-bottom:1px solid rgba(255,43,43,.45);padding-bottom:.25rem}
+    .contact-socials a:hover{color:var(--blood-hot)}
     @media(max-width:820px){
       .portfolio-grid,.profile-grid{grid-template-columns:1fr}
       .experience-item{grid-template-columns:1fr;gap:1rem}
@@ -66,7 +83,7 @@
 
 <div class="loader" id="loader">
   <div class="loader__inner">
-    <div class="loader__glyph">Supriya M</div>
+    <div class="loader__glyph">SUPRIYA M</div>
     <div class="loader__bar"><span id="loaderFill"></span></div>
     <div class="loader__meta">
       <span>INITIALIZING</span>
@@ -106,7 +123,8 @@
     <a href="#eyes" data-jp="01">VISION</a>
     <a href="#jutsu" data-jp="02">WORK</a>
     <a href="#profile" data-jp="03">PROFILE</a>
-    <a href="#end" data-jp="04">CONTACT</a>
+    <a href="#resume" data-jp="04">RESUME</a>
+    <a href="#end" data-jp="05">CONTACT</a>
     <button class="chrome__sound" id="soundToggle" type="button" aria-pressed="false" title="Toggle ambient thunder">
       <span class="chrome__sound-jp">音</span><span class="chrome__sound-state" id="soundState">OFF</span>
     </button>
@@ -155,7 +173,7 @@
       <p class="titleblock__en">A I / M L &nbsp; E N G I N E E R</p>
        <div class="hero-actions">
          <a class="hero-action" href="#jutsu">VIEW WORK ↓</a>
-         <a class="hero-action hero-action--resume" href="Supriya_M_Resume.pdf" download="Supriya_M_Resume.pdf">DOWNLOAD RESUME ↗</a>
+         <a class="hero-action hero-action--resume" href="#resume">VIEW RESUME ↗</a>
        </div>
     </div>
 
@@ -257,7 +275,13 @@
     <span class="portfolio-kicker">03 · PROFILE</span>
     <h2 class="portfolio-title">The person<br>behind the <span>models.</span></h2>
     <div class="profile-grid">
-      <div class="profile-big">Supriya<br><span>M</span></div>
+      <div class="profile-visual">
+        <div class="profile-photo">
+          <img src="assets/supriya.jpeg" alt="Supriya M" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+          <div class="profile-photo-fallback" style="display:none">ADD YOUR PHOTO<br>assets/supriya.jpeg</div>
+        </div>
+        <div class="profile-big">Supriya<br><span>M</span></div>
+      </div>
       <div>
         <p class="profile-copy">I'm Supriya M, a B.E. Artificial Intelligence & Machine Learning graduate from AMC Engineering College, Bengaluru.</p>
         <p class="profile-copy">I enjoy taking an unclear problem, understanding the data and constraints, experimenting with approaches, and turning the result into something usable.</p>
@@ -323,12 +347,41 @@
   </div>
 </section>
 
+<section class="portfolio-section resume-section" id="resume">
+  <div class="portfolio-wrap">
+    <span class="portfolio-kicker">06 · RESUME</span>
+    <h2 class="portfolio-title">The complete<br><span>picture.</span></h2>
+    <p class="portfolio-intro">My resume brings together my AI/ML internships, projects, technical skills, education, publication and research work.</p>
+    <div class="resume-actions">
+      <a class="resume-btn" href="Supriya_M_Resume.pdf" download="Supriya_M_Resume.pdf">DOWNLOAD PDF ↓</a>
+      <a class="resume-btn resume-btn--ghost" href="Supriya_M_Resume.pdf" target="_blank" rel="noopener">VIEW PDF ↗</a>
+    </div>
+    <p class="resume-direct">Direct file: <a href="Supriya_M_Resume.pdf" target="_blank" rel="noopener">Supriya_M_Resume.pdf</a></p>
+  </div>
+</section>
+
 <section class="portfolio-section contact-section" id="end">
   <div class="portfolio-wrap">
-    <span class="portfolio-kicker">06 · OPEN TO OPPORTUNITIES</span>
-    <h2 class="portfolio-title">Let's build<br><span>something.</span></h2>
-    <p class="portfolio-intro" style="margin:auto">I'm looking for teams where I can contribute to challenging AI problems, learn from experienced engineers and ship useful systems.</p>
-    <a class="contact-email" href="mailto:supriyachola123@gmail.com">supriyachola123@gmail.com ↗</a>
+    <span class="portfolio-kicker">07 · OPEN TO OPPORTUNITIES</span>
+    <h2 class="portfolio-title">Let’s build<br><span>something.</span></h2>
+    <div class="contact-layout">
+      <div>
+        <p class="contact-copy">I'm looking for teams where I can contribute to challenging AI problems, learn from experienced engineers and ship useful systems.</p>
+        <div class="contact-socials">
+          <a href="https://github.com/supriyachola" target="_blank" rel="noopener">GITHUB ↗</a>
+          <a href="https://www.linkedin.com/in/supriyachola/" target="_blank" rel="noopener">LINKEDIN ↗</a>
+          <a href="https://huggingface.co/supriyachola" target="_blank" rel="noopener">HUGGING FACE ↗</a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-card">
+          <div class="contact-row"><span class="contact-label">PHONE</span><a class="contact-value" href="tel:+918618873280">+91 86188 73280 ↗</a></div>
+          <div class="contact-row"><span class="contact-label">EMAIL</span><a class="contact-value contact-email" href="mailto:supriyachola123@gmail.com">supriyachola123@gmail.com ↗</a></div>
+          <div class="contact-row"><span class="contact-label">LOCATION</span><span class="contact-value">Bengaluru, India</span></div>
+        </div>
+        <p class="contact-note">AI / ML · GENAI · PYTHON · SOFTWARE ENGINEERING</p>
+      </div>
+    </div>
   </div>
 </section>
 
