@@ -701,312 +701,39 @@ footer{
 }
 
 
+/* ================================================================
+   FINAL PORTFOLIO POLISH
+   ================================================================ */
+
+/* Never allow browser-default blue/purple links anywhere. */
+a,
+a:visited {
+  color: var(--bone);
+  text-decoration: none;
 }
 
-
-/* Final portfolio polish */
-.portfolio-section a{color:var(--smoke);text-decoration:none}
-.portfolio-section a:visited{color:var(--smoke)}
-.portfolio-section a:hover{color:var(--blood-hot)}
-.hero-action,.resume-btn,.portfolio-link,.profile-links a,.contact-socials a,.contact-value,.contact-email{color:var(--bone)!important}
-.portfolio-link:hover,.profile-links a:hover,.contact-socials a:hover,.contact-value:hover,.contact-email:hover{color:var(--blood-hot)!important}
-@media(max-width:820px){
-  .profile-visual{position:relative;top:auto}
-  .profile-photo{margin-inline:auto}
-  .profile-big{text-align:center}
-  .contact-layout{grid-template-columns:1fr;gap:2.5rem}
-  .contact-value{font-size:.78rem}
-}
-/* FINAL HERO PRIORITY — keep this block LAST */
-@media (max-width:820px){
-  #mainCanvas{
-    opacity:.44;
-    filter:contrast(.90) brightness(.45) saturate(.60);
-  }
-
-  .scrub__sticky::after{
-    background:
-      radial-gradient(ellipse 88% 44% at 50% 59%,
-        rgba(0,0,0,.92) 0%,
-        rgba(0,0,0,.74) 48%,
-        rgba(0,0,0,.58) 72%,
-        rgba(0,0,0,.84) 100%),
-      linear-gradient(180deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.40) 32%,transparent 52%),
-      linear-gradient(0deg,rgba(0,0,0,.96) 0%,rgba(0,0,0,.55) 36%,transparent 62%);
-  }
-
-  .titleblock{
-    width:94vw;
-    bottom:11vh;
-  }
-
-  .titleblock__kicker{
-    font-size:.48rem;
-    letter-spacing:.34em;
-    margin-bottom:1rem;
-  }
-
-  .titleblock__jp{
-    font-size:clamp(4rem,17vw,7rem);
-    line-height:.80;
-    letter-spacing:.005em;
-  }
-
-  .titleblock__en{
-    font-size:.56rem;
-    letter-spacing:.30em;
-    margin-top:1.15rem;
-  }
-
-  .hero-actions{
-    gap:.6rem;
-    margin-top:1.45rem;
-  }
-
-  .hero-action{
-    min-width:138px;
-    padding:.76rem .8rem;
-    font-size:.47rem;
-    letter-spacing:.16em;
-  }
+a:hover,
+a:focus-visible {
+  color: var(--blood-hot);
+  text-decoration: none;
 }
 
-.scrub__sticky > .titleblock{z-index:20;}
-.scrub__sticky > .scrub__glow{z-index:3;}
-.scrub__sticky > .feathers{z-index:8;}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   TEXT-FIRST CINEMATIC LAYER
-   Rule: artwork is atmosphere; every readable word stays foreground.
-   Keep this block at the END of style.css.
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Artwork remains visible, but never competes with copy. */
-#mainCanvas{
-  opacity:.46 !important;
-  filter:
-    contrast(.90)
-    brightness(.42)
-    saturate(.62) !important;
-}
-
-/* Dark center reading field over the artwork. */
-.scrub__sticky::after{
-  z-index:2 !important;
-  background:
-    radial-gradient(
-      ellipse 62% 54% at 50% 57%,
-      rgba(0,0,0,.93) 0%,
-      rgba(0,0,0,.82) 36%,
-      rgba(0,0,0,.58) 62%,
-      rgba(0,0,0,.78) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,.92) 0%,
-      rgba(0,0,0,.52) 25%,
-      transparent 50%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(0,0,0,.96) 0%,
-      rgba(0,0,0,.62) 32%,
-      transparent 62%
-    );
-}
-
-/* ALL hero copy is above the image and above the scrim. */
-.phase{
-  z-index:12 !important;
-  color:var(--bone);
-  text-shadow:
-    0 3px 20px rgba(0,0,0,1),
-    0 0 16px rgba(0,0,0,1),
-    0 0 42px rgba(0,0,0,.95);
-}
-
-.phase__jp{
-  color:#f5f1e9;
-  text-shadow:
-    0 4px 25px rgba(0,0,0,1),
-    0 0 18px rgba(0,0,0,1),
-    0 0 55px rgba(0,0,0,.95);
-}
-
-.phase__en{
-  color:var(--blood-hot);
-  text-shadow:
-    0 2px 16px #000,
-    0 0 24px #000;
-}
-
-.phase__sub{
-  color:rgba(245,241,233,.88);
-  text-shadow:
-    0 2px 16px #000,
-    0 0 26px #000;
-}
-
-/* Main personal brand. */
-.titleblock{
-  z-index:20 !important;
-}
-
-.titleblock__kicker{
-  color:#f1ede5;
-  text-shadow:
-    0 2px 15px #000,
-    0 0 24px #000;
-}
-
-.titleblock__jp{
-  color:#faf7f0;
-  text-shadow:
-    0 5px 34px rgba(0,0,0,1),
-    0 0 20px rgba(0,0,0,1),
-    0 0 65px rgba(0,0,0,1);
-}
-
-.titleblock__jp span{
-  color:#ff3030;
-  text-shadow:
-    0 0 10px rgba(255,43,43,1),
-    0 0 28px rgba(255,43,43,.75),
-    0 0 70px rgba(255,43,43,.4);
-}
-
-.titleblock__en{
-  color:#f0ece4;
-  text-shadow:
-    0 2px 15px #000,
-    0 0 28px #000;
-}
-
-/* Navigation must remain readable over every frame. */
-.chrome{
-  z-index:300;
-  text-shadow:
-    0 2px 18px #000,
-    0 0 28px #000;
-}
-
-.chrome__nav a{
-  color:#eee9e0;
-  opacity:.82;
-  text-shadow:
-    0 2px 12px #000,
-    0 0 20px #000;
-}
-
-.chrome__nav a:hover{
-  color:#fff;
-  opacity:1;
-}
-
-.chrome__mark{
-  color:#f2eee7;
-  text-shadow:
-    0 2px 15px #000,
-    0 0 25px #000;
-}
-
-/* Scroll hint. */
-.hint{
-  z-index:300;
-  text-shadow:
-    0 2px 16px #000,
-    0 0 25px #000;
-}
-
-.hint__jp{
-  color:#f1ede5;
-}
-
-.hint__en{
-  color:#b7b0a8;
-  text-shadow:
-    0 2px 14px #000,
-    0 0 22px #000;
-}
-
-/* Persistent side labels. */
-.rail{
-  z-index:300;
-  text-shadow:
-    0 2px 18px #000,
-    0 0 26px #000;
-}
-
-.rail span{
-  color:#aaa39b;
-}
-
-/* Buttons: no browser blue/purple. */
-.hero-actions{
-  position:relative;
-  z-index:25;
-}
-
-.hero-action{
-  color:#f2eee7 !important;
-  text-decoration:none !important;
-  text-shadow:0 2px 10px #000;
-}
-
-.hero-action:visited{
-  color:#f2eee7 !important;
-}
-
-.hero-action:hover{
-  color:#fff !important;
-}
-
-/* Project / content text stays strong against dark panels. */
-.jutsu__head h2,
-.card__jp,
-.quote__jp,
-.footer__big{
-  color:#f2eee7;
-  text-shadow:
-    0 3px 22px rgba(0,0,0,.9),
-    0 0 30px rgba(0,0,0,.7);
-}
-
-.jutsu__head p,
-.card__txt,
-.quote blockquote p{
-  color:rgba(238,233,224,.78);
-}
-
-.card__ro{
-  color:#aaa39b;
-}
-
-.card__foot{
-  color:rgba(238,233,224,.55);
-}
-
-.eyebrow,
-.jutsu__hint,
-.jutsu__meta i{
-  text-shadow:
-    0 2px 12px #000,
-    0 0 20px #000;
-}
-
-/* Contact / profile links: bone normally, red on hover. */
 .portfolio-section a,
 .portfolio-section a:visited,
 .hero-action,
+.hero-action:visited,
 .resume-btn,
+.resume-btn:visited,
 .portfolio-link,
+.portfolio-link:visited,
 .profile-links a,
+.profile-links a:visited,
 .contact-socials a,
+.contact-socials a:visited,
 .contact-value,
-.contact-email{
-  color:#e8e4dc !important;
-  text-decoration:none;
+.contact-email {
+  color: var(--bone) !important;
+  text-decoration: none !important;
 }
 
 .portfolio-section a:hover,
@@ -1014,70 +741,352 @@ footer{
 .profile-links a:hover,
 .contact-socials a:hover,
 .contact-value:hover,
-.contact-email:hover{
-  color:var(--blood-hot) !important;
+.contact-email:hover {
+  color: var(--blood-hot) !important;
 }
 
-/* ═══ MOBILE: make EVERY word win against the artwork ═══ */
-@media (max-width:820px){
-  #mainCanvas{
-    opacity:.34 !important;
+
+/* ================================================================
+   HERO — ITACHI VISIBLE, TEXT STILL DOMINANT
+   ================================================================ */
+
+/*
+   Target balance:
+   - Itachi = clearly visible background atmosphere
+   - Typography = strongest visual layer
+   - Center gets a softer reading field rather than a full black wash
+*/
+
+#mainCanvas {
+  opacity: .62 !important;
+  filter:
+    contrast(1.00)
+    brightness(.60)
+    saturate(.78) !important;
+}
+
+
+/* Keep the artwork visible around the text.
+   The center is darker, but NOT blacked out. */
+.scrub__sticky::after {
+  z-index: 2 !important;
+  background:
+    radial-gradient(
+      ellipse 58% 48% at 50% 57%,
+      rgba(0,0,0,.68) 0%,
+      rgba(0,0,0,.48) 40%,
+      rgba(0,0,0,.22) 68%,
+      rgba(0,0,0,.62) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.58) 0%,
+      rgba(0,0,0,.20) 25%,
+      transparent 50%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.70) 0%,
+      rgba(0,0,0,.28) 30%,
+      transparent 62%
+    );
+}
+
+
+/* Artwork is behind all hero typography. */
+.scrub__sticky > .scrub__glow {
+  z-index: 3 !important;
+}
+
+.scrub__sticky > .feathers {
+  z-index: 8 !important;
+}
+
+.scrub__sticky > .phase {
+  z-index: 12 !important;
+}
+
+.scrub__sticky > .titleblock {
+  z-index: 20 !important;
+}
+
+
+/* ================================================================
+   HERO TEXT
+   ================================================================ */
+
+.phase {
+  z-index: 12 !important;
+  color: #f5f1e9;
+  text-shadow:
+    0 3px 20px rgba(0,0,0,1),
+    0 0 16px rgba(0,0,0,1),
+    0 0 42px rgba(0,0,0,.90);
+}
+
+.phase__jp {
+  color: #faf7f0 !important;
+  text-shadow:
+    0 4px 25px rgba(0,0,0,1),
+    0 0 18px rgba(0,0,0,.98),
+    0 0 55px rgba(0,0,0,.85);
+}
+
+.phase__en {
+  color: var(--blood-hot) !important;
+  text-shadow:
+    0 2px 16px #000,
+    0 0 24px #000,
+    0 0 35px rgba(255,43,43,.22);
+}
+
+.phase__sub {
+  color: rgba(245,241,233,.92) !important;
+  text-shadow:
+    0 2px 16px #000,
+    0 0 26px #000;
+}
+
+
+/* Main name — brightest element on the page. */
+.titleblock {
+  z-index: 20 !important;
+  text-shadow:
+    0 4px 55px rgba(0,0,0,1),
+    0 0 26px rgba(0,0,0,.98),
+    0 0 90px rgba(0,0,0,.70);
+}
+
+.titleblock__kicker {
+  color: #f5f1e9 !important;
+  text-shadow:
+    0 2px 15px #000,
+    0 0 24px #000;
+}
+
+.titleblock__jp {
+  color: #faf7f0 !important;
+  text-shadow:
+    0 5px 35px rgba(0,0,0,1),
+    0 0 22px rgba(0,0,0,1),
+    0 0 70px rgba(0,0,0,.85);
+}
+
+.titleblock__jp span {
+  color: #ff3030 !important;
+  text-shadow:
+    0 0 10px rgba(255,43,43,1),
+    0 0 30px rgba(255,43,43,.78),
+    0 0 75px rgba(255,43,43,.42);
+}
+
+.titleblock__en {
+  color: #f0ece4 !important;
+  text-shadow:
+    0 2px 15px #000,
+    0 0 28px #000;
+}
+
+
+/* ================================================================
+   NAVIGATION / CHROME
+   ================================================================ */
+
+.chrome {
+  z-index: 300 !important;
+  text-shadow:
+    0 2px 18px #000,
+    0 0 28px #000;
+}
+
+.chrome__mark {
+  color: #f2eee7 !important;
+  text-shadow:
+    0 2px 15px #000,
+    0 0 25px #000;
+}
+
+.chrome__nav a,
+.chrome__nav a:visited {
+  color: #eee9e0 !important;
+  opacity: .84;
+  text-shadow:
+    0 2px 12px #000,
+    0 0 20px #000;
+}
+
+.chrome__nav a:hover,
+.chrome__nav a:focus-visible {
+  color: #fff !important;
+  opacity: 1;
+}
+
+
+/* ================================================================
+   BUTTONS
+   ================================================================ */
+
+.hero-actions {
+  position: relative;
+  z-index: 25 !important;
+  pointer-events: auto;
+}
+
+.hero-action,
+.hero-action:visited {
+  color: #f2eee7 !important;
+  text-decoration: none !important;
+  background: rgba(0,0,0,.48);
+  border-color: rgba(232,228,220,.48);
+  text-shadow: 0 2px 10px #000;
+}
+
+.hero-action:hover,
+.hero-action:focus-visible {
+  color: #fff !important;
+  border-color: var(--blood-hot) !important;
+  background: rgba(120,0,10,.18);
+}
+
+
+/* ================================================================
+   SCROLL / SIDE UI
+   ================================================================ */
+
+.hint {
+  z-index: 300 !important;
+  text-shadow:
+    0 2px 16px #000,
+    0 0 25px #000;
+}
+
+.hint__jp {
+  color: #f1ede5 !important;
+}
+
+.hint__en {
+  color: #b7b0a8 !important;
+  text-shadow:
+    0 2px 14px #000,
+    0 0 22px #000;
+}
+
+.rail {
+  z-index: 300 !important;
+  text-shadow:
+    0 2px 18px #000,
+    0 0 26px #000;
+}
+
+.rail span {
+  color: #aaa39b !important;
+}
+
+
+/* ================================================================
+   OTHER SECTIONS — STRONG, CLEAN TYPOGRAPHY
+   ================================================================ */
+
+.jutsu__head h2,
+.card__jp,
+.quote__jp,
+.footer__big {
+  color: #f2eee7;
+  text-shadow:
+    0 3px 22px rgba(0,0,0,.9),
+    0 0 30px rgba(0,0,0,.7);
+}
+
+.jutsu__head p,
+.card__txt,
+.quote blockquote p {
+  color: rgba(238,233,224,.80);
+}
+
+.card__ro {
+  color: #aaa39b;
+}
+
+.card__foot {
+  color: rgba(238,233,224,.58);
+}
+
+.eyebrow,
+.jutsu__hint,
+.jutsu__meta i {
+  text-shadow:
+    0 2px 12px #000,
+    0 0 20px #000;
+}
+
+
+/* ================================================================
+   MOBILE — KEEP ITACHI VISIBLE TOO
+   ================================================================ */
+
+@media (max-width: 820px) {
+
+  #mainCanvas {
+    opacity: .56 !important;
     filter:
-      contrast(.88)
-      brightness(.36)
-      saturate(.52) !important;
+      contrast(.96)
+      brightness(.52)
+      saturate(.70) !important;
   }
 
-  .scrub__sticky::after{
-    z-index:2 !important;
+  .scrub__sticky::after {
+    z-index: 2 !important;
     background:
       radial-gradient(
-        ellipse 92% 52% at 50% 58%,
-        rgba(0,0,0,.96) 0%,
-        rgba(0,0,0,.86) 42%,
-        rgba(0,0,0,.68) 68%,
-        rgba(0,0,0,.88) 100%
+        ellipse 88% 48% at 50% 58%,
+        rgba(0,0,0,.76) 0%,
+        rgba(0,0,0,.58) 42%,
+        rgba(0,0,0,.34) 68%,
+        rgba(0,0,0,.72) 100%
       ),
       linear-gradient(
         180deg,
-        rgba(0,0,0,.96) 0%,
-        rgba(0,0,0,.55) 34%,
-        transparent 55%
+        rgba(0,0,0,.70) 0%,
+        rgba(0,0,0,.26) 34%,
+        transparent 56%
       ),
       linear-gradient(
         0deg,
-        rgba(0,0,0,1) 0%,
-        rgba(0,0,0,.68) 38%,
-        transparent 65%
+        rgba(0,0,0,.80) 0%,
+        rgba(0,0,0,.34) 36%,
+        transparent 64%
       );
   }
 
-  .phase{
-    z-index:12 !important;
-    max-width:90vw;
+  .phase {
+    z-index: 12 !important;
+    max-width: 90vw;
     text-shadow:
       0 3px 18px #000,
       0 0 18px #000,
       0 0 38px #000;
   }
 
-  .phase__jp{
+  .phase__jp {
+    color: #faf7f0 !important;
     text-shadow:
       0 4px 22px #000,
       0 0 20px #000,
       0 0 42px #000;
   }
 
-  .phase__sub{
-    color:rgba(245,241,233,.92);
+  .phase__sub {
+    color: rgba(245,241,233,.94) !important;
   }
 
-  .titleblock{
-    z-index:20 !important;
+  .titleblock {
+    z-index: 20 !important;
+    width: 94vw;
+    bottom: 9vh;
   }
 
-  .titleblock__jp{
-    font-size:clamp(4.2rem,18vw,7.2rem);
+  .titleblock__jp {
+    font-size: clamp(4.2rem,18vw,7.2rem);
     text-shadow:
       0 4px 28px #000,
       0 0 20px #000,
@@ -1085,25 +1094,55 @@ footer{
   }
 
   .titleblock__kicker,
-  .titleblock__en{
+  .titleblock__en {
     text-shadow:
       0 2px 14px #000,
       0 0 24px #000;
   }
 
-  .hero-action{
-    background:rgba(0,0,0,.72);
-    border-color:rgba(232,228,220,.5);
+  .hero-action {
+    background: rgba(0,0,0,.66);
+    border-color: rgba(232,228,220,.52);
+  }
+
+  .chrome__nav a {
+    opacity: .90;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-value {
+    font-size: .78rem;
+  }
+
+  .profile-visual {
+    position: relative;
+    top: auto;
+  }
+
+  .profile-photo {
+    margin-inline: auto;
+  }
+
+  .profile-big {
+    text-align: center;
   }
 }
 
-/* Accessibility: preserve the hierarchy even with reduced motion. */
-@media (prefers-reduced-motion:reduce){
+
+/* ================================================================
+   ACCESSIBILITY
+   ================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
   .titleblock__jp,
   .phase__jp,
   .jutsu__head h2,
   .card__jp,
-  .quote__jp{
-    text-shadow:0 3px 18px #000;
+  .quote__jp {
+    text-shadow: 0 3px 18px #000;
   }
 }
