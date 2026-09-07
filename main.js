@@ -78,15 +78,47 @@ function syncSize(canvas) {
 /* Fills the canvas, but never crops the sides harder than `maxUp` allows —
    so on tall/narrow screens the composition (a face, two eyes) survives
    instead of zooming into a nostril. */
-function drawCover(ctx, img, cw, ch, maxUp = 2.0) {
-  if (!img || !img.naturalWidth) return false;
-  const ir = img.naturalWidth / img.naturalHeight;
-  let w = cw, h = cw / ir;                 // start by fitting the width
-  if (h < ch) {                            // needs to grow to cover height
-    const s = Math.min(ch / h, maxUp);
-    w *= s; h *= s;
+function drawCover(ctx, img, cw, ch, maxUp = 1.35) {
+  if (!img || !img.naturalWidth || !img.naturalHeight) return false;
+
+  /*
+    Responsive frame fitting:
+    - Desktop: fills the viewport normally.
+    - Tall/narrow phones: limits zoom so the face does not become huge.
+    - Uses a small vertical bias so the face/eyes stay in the visual centre.
+  */
+  const iw = img.naturalWidth;
+  const ih = img.naturalHeight;
+  const imageRatio = iw / ih;
+  const viewportRatio = cw / ch;
+
+  let scale;
+
+  if (viewportRatio < 0.72) {
+    // Phone portrait: prioritize the full face instead of aggressive cover zoom.
+    scale = Math.max(cw / iw, ch / ih);
+    const phoneLimit = Math.min(
+      1.0,
+      (ch / ih) * 1.08
+    );
+    scale = Math.min(scale, Math.max(phoneLimit, scale * 0.82));
+  } else {
+    scale = Math.max(cw / iw, ch / ih);
   }
-  ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+
+  // Never let an accidental resize create a giant crop.
+  const naturalMax = Math.max(cw / iw, ch / ih) * maxUp;
+  scale = Math.min(scale, naturalMax);
+
+  const w = iw * scale;
+  const h = ih * scale;
+
+  // Center horizontally; on tall screens keep the face slightly above centre.
+  const x = (cw - w) * 0.5;
+  const verticalBias = viewportRatio < 0.72 ? -0.035 : 0;
+  const y = (ch - h) * (0.5 + verticalBias);
+
+  ctx.drawImage(img, x, y, w, h);
   return true;
 }
 
